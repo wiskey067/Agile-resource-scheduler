@@ -1,41 +1,42 @@
-This project leverages machine learning to automate and optimize resource planning and task scheduling for Agile software development teams. By analyzing historical task data, team velocity, and member availability, the model intelligently recommends task assignments and sprint schedules that improve overall efficiency.
+🧠 Agile Resource Scheduler – Intelligent Task Allocation for Agile Teams
 
-This project implements a machine learning pipeline to predict optimal task-to-resource allocations for Agile software development teams. Using a Random Forest Classifier, the model evaluates task requirements and resource capabilities to assign the most suitable employee to each task, maximizing productivity while respecting constraints like skill match, availability, priority, and complexity.
+This project leverages machine learning to automate and optimise resource planning and task scheduling for Agile software development environments. By analyzing historical task data, team velocity, and individual availability, the model intelligently recommends task assignments and sprint schedules that maximize efficiency and productivity.
 
-📂 Built as part of a group project for our Minor specialization, this solution simulates real-world resource management scenarios in Agile environments like Scrum or Kanban.
+Built as part of a group capstone for our Minor Specialization, this project simulates real-world Agile resource management scenarios found in Scrum or Kanban setups.
 
-
+⸻
 
 🎯 Key Features:
-	•	Synthetic Data Generation: Simulates realistic employee (resource) and task datasets with features like skills, workload, availability, experience, and priority.
-	•	Feature Engineering: Constructs derived features like skill match, capacity availability, skill gap, workload ratio, and priority score.
-	•	Target Labeling: Creates a good_allocation binary label using rule-based logic and Gaussian noise to reflect real-world assignment suitability.
-	•	Modeling with Random Forest:
-	•	Includes oversampling with SMOTE to balance classes.
-	•	Uses cross-validation to evaluate F1-score performance.
-	•	Allocation Ranking: Predicts allocation probabilities and selects the top resource for each task based on model confidence.
-	•	Output File: Saves final assignments to optimal_allocations.csv with details like task info, resource details, and allocation score.
+	•	Synthetic Data Generation
+Generates realistic employee and task datasets with features like skills, workload, availability, experience, and task priority.
+	•	Feature Engineering
+Constructs high-value features such as:
+	•	skill_match, workload_ratio, priority_score, skill_gap, capacity_left
+	•	Target Labeling
+Uses rule-based logic combined with Gaussian noise to create a binary label (good_allocation) that simulates assignment suitability.
+	•	Machine Learning Model – Random Forest Classifier
+	•	Tuned for performance using cross-validation
+	•	Balanced class distribution using SMOTE oversampling
+	•	Predicts probability scores for each task-resource pair
+	•	Ranks candidates and selects top resource for each task
+	•	Final Output
+Generates optimal_allocations.csv with top recommendations, including confidence scores and all relevant details.
+
+⸻
+
+📈 Visualization Dashboard (Tableau Prototype)
+
+Though our primary focus was on the machine learning pipeline, we also built a lightweight Tableau dashboard to visualize:
+	•	Sprint-wise task allocation
+	•	Workload distribution by resource
+	•	Priority vs skill alignment
+This helped us verify allocation logic and communicate insights to stakeholders.
 
 ⸻
 
 ⚙️ Tech Stack:
-	•	Python (Pandas, NumPy, scikit-learn, imbalanced-learn)
-	•	Random Forest Classifier (with hyperparameters tuned)
-	•	SMOTE Oversampling (to handle class imbalance)
-	•	Colab / Jupyter Notebook – Used for prototyping and visualization
-
-⸻
-
-📁 Outputs:
-	•	resources.csv – Simulated employee dataset
-	•	tasks.csv – Simulated tasks with constraints
-	•	optimal_allocations.csv – Final task-to-resource assignments
-	•	Console logs – Model metrics, cross-validation results, and sample predictions
-
-⸻
-
-📊 Sample Output Columns:
-	•	task_id, project_name, priority, required_skill
-	•	employee_name, employee_primary_skill, allocation_score
-	•	employee_availability, skill_level, task_complexity
-
+	•	Python – Pandas, NumPy, scikit-learn, imbalanced-learn
+	•	Modeling – Random Forest Classifier
+	•	Imbalance Handling – SMOTE
+	•	Development Environment – Google Colab / Jupyter Notebooks
+	•	Visualization (Optional) – Tableau Public
